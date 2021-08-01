@@ -6,7 +6,7 @@
 | ------------------  | ------ | ----------- |
 | nickname            | string | null: false |
 | email               | string | null: false |
-| password            | string | null: false |
+| encrypted_password  | string | null: false |
 | name(em)            | string | null: false |
 | name(en)            | string | null: false |
 | birthday            | string | null: false |

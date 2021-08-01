@@ -7,10 +7,10 @@
                 <mxCell id="2" value="itemsテーブル&lt;br&gt;&lt;br&gt;image&lt;br&gt;name&lt;br&gt;explan&lt;br&gt;detail&lt;br&gt;delivery&lt;br&gt;price&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry y="720" width="140" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="usersテーブル&lt;br&gt;&lt;br&gt;nickname&lt;br&gt;email&lt;br&gt;password&lt;br&gt;password_confirm&lt;br&gt;name(em)&lt;br&gt;name(en)&lt;br&gt;birthday" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="4" value="usersテーブル&lt;br&gt;&lt;br&gt;nickname&lt;br&gt;email&lt;br&gt;encrypted_password&lt;br&gt;password_confirm&lt;br&gt;name(em)&lt;br&gt;name(en)&lt;br&gt;birthday" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry x="120" y="960" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="purchaceテーブル&lt;br&gt;&lt;br&gt;&amp;nbsp;name&lt;br&gt;category&lt;br&gt;status&lt;br&gt;charge&lt;br&gt;area&lt;br&gt;indication" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="13" value="purchacesテーブル&lt;br&gt;&lt;br&gt;&amp;nbsp;name&lt;br&gt;category&lt;br&gt;status&lt;br&gt;charge&lt;br&gt;area&lt;br&gt;indication" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry x="270" y="720" width="140" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="" style="endArrow=classic;startArrow=ERmany;html=1;entryX=-0.006;entryY=0.375;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.375;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;sourcePerimeterSpacing=0;startFill=0;" edge="1" parent="1" source="2" target="4">
