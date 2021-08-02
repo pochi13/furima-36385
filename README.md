@@ -7,9 +7,14 @@
 | nickname            | string | null: false |
 | email               | string | null: false |
 | encrypted_password  | string | null: false |
-| name(em)            | string | null: false |
-| name(en)            | string | null: false |
-| birthday            | string | null: false |
+| name                | string | null: false |
+| name_kana           | string | null: false |
+| birthday            | datetime | null: false |
+
+belongs_to purchase
+has_many items
+belongs_to address
+
 
 ## purchasesテーブル
 
@@ -21,18 +26,53 @@
 | derivery            | string | null: false |
 | indication          | string | null: false |
 
+belongs_to user
+has_many items
+belomgs_to address
+
+
 
 
 ## items テーブル
 
-| Column              | Type   | Options     |
-| ------------------  | ------ | ----------- |
-| image               |        | null: false |
-| name                | string | null: false |
-| explan              | text   | null: false |
-| detail              | text   | null: false |
-| delivery            | string | null: false |
-| price               | string | null: false |
+| Column              | Type     | Options     |
+| ------------------  | ------   | ----------- |
+| name                | string   | null: false |
+| explan              | text     | null: false |
+| detail_category     | string   | null: false |
+| detail_status       | string   | null: false |
+| delivery_charge     | string   | null: false |
+| delivery_area       | string   | null: false |
+| delivery_indication | string   | null: false |
+| price               | insteger | null: false |
+
+belongs_to user
+belongs_to purchase
+belongs_to address
+
+
+
+
+## address テーブル
+
+| Column              | Type     | Options     |
+| ------------------  | ------   | ----------- |
+| code                | insteger | null: false |
+| prefectures         | string   | null: false |
+| municipalities      | string   | null: false |
+| address             | string   | null: false |
+| building            | string   | null: false |
+| number              | insteger | null: false |
+
+has_many users
+has_many purchases
+has_many items
+
+
+
+
+
+
 
 
 This README would normally document whatever steps are necessary to get the
