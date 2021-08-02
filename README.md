@@ -5,13 +5,13 @@
 | Column              | Type   | Options     　|
 | ------------------  | ------ | ----------- 　|
 | nickname            | string | null: false 　|
-| email               | string | unique: true |
+| email               | string | null: false, unique: true |
 | encrypted_password  | string | null: false 　|
 | last_name                | string | null: false 　|
 | firstname                | string | null: false 　|
 | last_name_kana           | string | null: false 　|
 | first_name_kana           | string | null: false 　|
-| birthday            | datetime | null: false |
+| birthday            | date | null: false |
 
 has_many purchases
 has_many items
@@ -59,7 +59,7 @@ has_one  purchase
 | ------------------  | ------   | ----------- |
 | code                | string   | null: false |
 | delivery_area_id    | integer  | null: false |
-| municipalities      | string   | null: false |
+| municipality        | string   | null: false |
 | address             | string   | null: false |
 | building            | string   |             |
 | number              | insteger | null: false |
