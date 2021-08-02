@@ -13,21 +13,21 @@
 | first_name_kana           | string | null: false 　|
 | birthday            | datetime | null: false |
 
-has_many purchase
+has_many purchases
 has_many items
-belongs_to address
+
 
 
 ## purchasesテーブル
 
 | Column              | Type   | Options     |
 | ------------------  | ------ | ----------- |
-| user                | reference | foreign:true |
-| item                | reference | foreign:true |
+| user                | reference | foreign_key:true |
+| item                | reference | foreign_key:true |
 
 belongs_to user
-has_many items
-belomgs_to address
+belongs_to item
+has_one address
 
 
 
@@ -44,11 +44,11 @@ belomgs_to address
 | delivery_area_id       | integer   | null: false |
 | delivery_indication_id | integer   | null: false |
 | price               | integer | null: false |
-| user                | reference | foreign:true |
+| user                | reference | foreign_key:true |
 
 belongs_to user
-has_many   purchase
-belongs_to address
+has_one  purchase
+
 
 
 
@@ -61,12 +61,14 @@ belongs_to address
 | delivery_area_id    | integer  | null: false |
 | municipalities      | string   | null: false |
 | address             | string   | null: false |
-| building            | string   |            |
+| building            | string   |             |
 | number              | insteger | null: false |
-| purchase            | reference | foreign:true |
-
+| purchase            | reference | foreign_key:true |
 
 belongs_to purchase
+
+
+
 
 
 
