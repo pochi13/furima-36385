@@ -22,11 +22,6 @@ belongs_to address
 
 | Column              | Type   | Options     |
 | ------------------  | ------ | ----------- |
-| name                | string | null: false |
-| category            | string | null: false |
-| status              | string | null: false |
-| derivery            | string | null: false |
-| indication          | string | null: false |
 | user                | reference | foreign:true |
 | item                | reference | foreign:true |
 
@@ -52,7 +47,7 @@ belomgs_to address
 | user                | reference | foreign:true |
 
 belongs_to user
-belongs_to purchase
+has_many   purchase
 belongs_to address
 
 
@@ -62,16 +57,16 @@ belongs_to address
 
 | Column              | Type     | Options     |
 | ------------------  | ------   | ----------- |
-| code                | insteger | null: false |
-| prefectures         | string   | null: false |
+| code                | string   | null: false |
+| delivery_area_id    | integer  | null: false |
 | municipalities      | string   | null: false |
 | address             | string   | null: false |
-| building            | string   | null: false |
+| building            | string   |            |
 | number              | insteger | null: false |
 | purchase            | reference | foreign:true |
 
-belongs_to purchases
 
+belongs_to purchase
 
 
 
