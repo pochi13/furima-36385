@@ -11,7 +11,7 @@
 | name_kana           | string | null: false |
 | birthday            | datetime | null: false |
 
-belongs_to purchase
+has_one purchase
 has_many items
 belongs_to address
 

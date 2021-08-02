@@ -14,7 +14,7 @@
                     <mxGeometry x="330" y="680" width="200" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="adressテーブル&lt;br&gt;&lt;br&gt;code&lt;br&gt;prefectures&lt;br&gt;municipalities&lt;br&gt;address&lt;br&gt;building&lt;br&gt;number" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="990" width="160" height="160" as="geometry"/>
+                    <mxGeometry x="350" y="880" width="160" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;sourcePerimeterSpacing=0;width=0;endSize=5.67;entryX=-0.025;entryY=0.456;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="19">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -23,24 +23,10 @@
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="24" value="" style="shape=flexArrow;endArrow=none;startArrow=none;html=1;sourcePerimeterSpacing=0;entryX=-0.019;entryY=0.556;entryDx=0;entryDy=0;entryPerimeter=0;shadow=1;sketch=1;startFill=0;endFill=0;" edge="1" parent="1" target="19">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="165" y="1080" as="sourcePoint"/>
-                        <mxPoint x="255" y="990" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="25" value="" style="shape=flexArrow;endArrow=block;startArrow=none;html=1;sourcePerimeterSpacing=0;entryX=0.368;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.413;exitY=-0.025;exitDx=0;exitDy=0;exitPerimeter=0;elbow=vertical;shadow=1;sketch=0;endFill=0;startFill=0;" edge="1" parent="1" source="4" target="2">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="70" y="980" as="sourcePoint"/>
                         <mxPoint x="140" y="880" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="26" value="" style="shape=flexArrow;endArrow=block;startArrow=none;html=1;shadow=1;sourcePerimeterSpacing=0;width=8;startSize=4.7;exitX=0.419;exitY=-0.031;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.425;entryY=1.01;entryDx=0;entryDy=0;entryPerimeter=0;startFill=0;endFill=0;" edge="1" parent="1" source="19" target="13">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="360" y="980" as="sourcePoint"/>
-                        <mxPoint x="460" y="880" as="targetPoint"/>
-                        <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="27" value="" style="endArrow=block;startArrow=block;html=1;shadow=1;sourcePerimeterSpacing=0;exitX=1.011;exitY=0.542;exitDx=0;exitDy=0;exitPerimeter=0;shape=flexArrow;endFill=0;" edge="1" parent="1" source="2">
@@ -53,12 +39,6 @@
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="170" y="990" as="sourcePoint"/>
                         <mxPoint x="320" y="880" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="29" value="" style="shape=flexArrow;endArrow=block;startArrow=none;html=1;shadow=1;sourcePerimeterSpacing=0;entryX=1;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0;exitDx=0;exitDy=0;startFill=0;endFill=0;" edge="1" parent="1" source="19" target="2">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="200" y="940" as="sourcePoint"/>
-                        <mxPoint x="300" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
