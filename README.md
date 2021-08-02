@@ -62,7 +62,7 @@ has_one  purchase
 | municipality        | string   | null: false |
 | address             | string   | null: false |
 | building            | string   |             |
-| number              | insteger | null: false |
+| number              | string | null: false |
 | purchase            | reference | foreign_key:true |
 
 belongs_to purchase
