@@ -12,9 +12,9 @@
 | last_name_kana           | string | null: false 　|
 | first_name_kana           | string | null: false 　|
 | birthday            | date | null: false |
-
-has_many purchases
-has_many items
+### Association
+has_many :purchases
+has_many :items
 
 
 
@@ -24,10 +24,10 @@ has_many items
 | ------------------  | ------ | ----------- |
 | user                | reference | foreign_key:true |
 | item                | reference | foreign_key:true |
-
-belongs_to user
-belongs_to item
-has_one address
+### Association
+belongs_to :user
+belongs_to :item
+has_one :address
 
 
 
@@ -45,9 +45,9 @@ has_one address
 | delivery_indication_id | integer   | null: false |
 | price               | integer | null: false |
 | user                | reference | foreign_key:true |
-
-belongs_to user
-has_one  purchase
+### Association
+belongs_to :user
+has_one  :purchase
 
 
 
@@ -64,8 +64,8 @@ has_one  purchase
 | building            | string   |             |
 | number              | string | null: false |
 | purchase            | reference | foreign_key:true |
-
-belongs_to purchase
+### Association
+belongs_to :purchase
 
 
 
