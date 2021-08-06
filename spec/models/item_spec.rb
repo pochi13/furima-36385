@@ -35,9 +35,10 @@ require 'rails_helper'
       end
 
       it 'カテゴリーの情報が１の時には出品できない' do
-        @item.detail_category_id = nil
+        @item.detail_category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Detail category can't be blank")
+        
+        expect(@item.errors.full_messages).to include("Detail category must be other than 1")
       end
 
       it '商品の状態の情報が必須であること' do
@@ -47,9 +48,10 @@ require 'rails_helper'
       end
 
       it '商品の状態の情報が１の時には出品できない' do
-        @item.detail_status_id = nil
+        @item.detail_status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Detail status can't be blank")
+        
+        expect(@item.errors.full_messages).to include("Detail status must be other than 1")
       end
 
       it '配送料の負担の情報が必須であること' do
@@ -59,9 +61,10 @@ require 'rails_helper'
       end
 
       it '配送料の負担の情報が１の時には出品できない' do
-        @item.delivery_charge_id = nil
+        @item.delivery_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery charge can't be blank")
+       
+        expect(@item.errors.full_messages).to include("Delivery charge must be other than 1")
       end
 
       it '発送元の地域の情報が必須であること' do
@@ -71,9 +74,10 @@ require 'rails_helper'
       end
 
       it '発送元の地域の情報が１の時には出品できない' do
-        @item.delivery_area_id = nil
+        @item.delivery_area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery area can't be blank")
+        
+        expect(@item.errors.full_messages).to include("Delivery area must be other than 1")
       end
 
       it '発送の目安の情報が必須であること' do
@@ -83,9 +87,10 @@ require 'rails_helper'
       end
 
       it '発送元の地域の情報が１の時には出品できない' do
-        @item.delivery_indication_id = nil
+        @item.delivery_indication_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery indication can't be blank")
+        
+        expect(@item.errors.full_messages).to include("Delivery indication must be other than 1")
       end
 
 
