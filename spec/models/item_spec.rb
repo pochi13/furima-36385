@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-   RSpec.describe Item, type: :model do
+  RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
   end
@@ -34,8 +34,20 @@ require 'rails_helper'
         expect(@item.errors.full_messages).to include("Detail category can't be blank")
       end
 
+      it 'カテゴリーの情報が１の時には出品できない' do
+        @item.detail_category_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Detail category can't be blank")
+      end
+
       it '商品の状態の情報が必須であること' do
         @item.detail_status_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Detail status can't be blank")
+      end
+
+      it '商品の状態の情報が１の時には出品できない' do
+        @item.detail_status_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Detail status can't be blank")
       end
@@ -46,11 +58,37 @@ require 'rails_helper'
         expect(@item.errors.full_messages).to include("Delivery charge can't be blank")
       end
 
+      it '配送料の負担の情報が１の時には出品できない' do
+        @item.delivery_charge_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery charge can't be blank")
+      end
+
       it '発送元の地域の情報が必須であること' do
         @item.delivery_area_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery area can't be blank")
       end
+
+      it '発送元の地域の情報が１の時には出品できない' do
+        @item.delivery_area_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery area can't be blank")
+      end
+
+      it '発送の目安の情報が必須であること' do
+        @item.delivery_indication_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery indication can't be blank")
+      end
+
+      it '発送元の地域の情報が１の時には出品できない' do
+        @item.delivery_indication_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery indication can't be blank")
+      end
+
+
 
       it '価格の情報が必須であること' do
         @item.price = ''
@@ -62,7 +100,7 @@ require 'rails_helper'
       it '価格は、¥300~¥9,999,999の間のみ保存可能であること' do
         @item.price = 299
         @item.valid?
-       
+    
         expect(@item.errors.full_messages).to include( "Price is not included in the list")
       end
 
@@ -88,13 +126,11 @@ require 'rails_helper'
       end
     end
 
-     
     context '内容に問題ない場合' do
       it '全て正常' do
         expect(@item).to be_valid
       end
     end
   end
- 
 end
 
