@@ -1,10 +1,15 @@
 require 'rails_helper'
+
    RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
   end
+
+  
   describe '#create' do
+    
     context '内容に問題がある場合' do
+      
       it '商品画像を1枚つけることが必須であること' do
         @item.image = nil
         @item.valid?
@@ -74,6 +79,13 @@ require 'rails_helper'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
+
+      it 'user情報が空の場合は保存できない' do
+        @item.user = nil
+        @item.valid?
+        
+        expect(@item.errors.full_messages).to include("User must exist")
+      end
     end
 
      
@@ -83,5 +95,6 @@ require 'rails_helper'
       end
     end
   end
+ 
 end
 
