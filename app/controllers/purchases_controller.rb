@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
 
   def index
    @form = Form.new
-   if  current_user == @form2.user
+   if  current_user == @item.user || @item.purchase != nil 
     redirect_to root_path
     
    end
@@ -31,7 +31,7 @@ class PurchasesController < ApplicationController
   def item_pay
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"] 
     Payjp::Charge.create(
-        amount: @form2.price,
+        amount: @item.price,
         card: form_params[:token],    
         currency: 'jpy'                
       )
