@@ -29,7 +29,7 @@ class PurchasesController < ApplicationController
   end
 
   def item_pay
-    Payjp.api_key = "0ad5afe6e0866c86b3c6456cf44b9c11" 
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"] 
     Payjp::Charge.create(
         amount: @form2.price,
         card: form_params[:token],    
@@ -39,6 +39,6 @@ class PurchasesController < ApplicationController
 
   private
   def set_purchase
-    @form2 = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
   end
 end
