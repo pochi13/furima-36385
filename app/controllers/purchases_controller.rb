@@ -4,9 +4,6 @@ class PurchasesController < ApplicationController
   before_action :set_move,only: [:index, :create]
   def index
    @form = Form.new
-   if  current_user == @item.user || @item.purchase != nil 
-    redirect_to root_path
-   end
   end
 
   def create
@@ -24,7 +21,7 @@ class PurchasesController < ApplicationController
 
   private
   def form_params
-    params.require(:form).permit(:code, :delivery_area_id, :municipality, :address, :number, :building).merge(user_id: current_user.id,item_id: params[:item_id],token: params[:token])
+    params.require(:form).permit(:code, :delivery_area_id, :municipality, :address, :number).merge(user_id: current_user.id,item_id: params[:item_id],token: params[:token])
   end
 
   def item_pay
@@ -39,6 +36,12 @@ class PurchasesController < ApplicationController
   private
   def set_purchase
     @item = Item.find(params[:item_id])
+  end
+
+  def set_move
+    if @item.user != current_user || @item.purchase != nil 
+        redirect_to root_path
+    end
   end
 
 
