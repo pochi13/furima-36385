@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Form, type: :model do
   before do
-    @form = FactoryBot.build(:form)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @form = FactoryBot.build(:form, item_id: item.id, user_id: user.id)
+    sleep 0.1
   end
 
 
   describe '#create' do
-
     context '内容に問題がある場合' do
 
 
@@ -26,7 +28,7 @@ RSpec.describe Form, type: :model do
       end
 
       it '都道府県が必須であること' do
-        @form.delivery_area_id = ''
+        @form.delivery_area_id = nil
         @form.valid?
        
         expect(@form.errors.full_messages).to include("Delivery area can't be blank")
@@ -53,8 +55,14 @@ RSpec.describe Form, type: :model do
         expect(@form.errors.full_messages).to include("Number can't be blank")
       end
 
-      it '電話番号は、10桁以上11桁以内の半角数値のみ保存可能なこと' do
+      it '電話番号は、電話番号は、9桁以下では登録できない' do
         @form.number = 123456789
+        @form.valid?
+        expect(@form.errors.full_messages).to include("Number is invalid")
+      end
+
+      it '電話番号が12桁以上では登録できない' do
+        @form.number = 123456789123
         @form.valid?
         expect(@form.errors.full_messages).to include("Number is invalid")
       end
@@ -89,12 +97,12 @@ RSpec.describe Form, type: :model do
       it "priceとtokenがあれば保存ができること" do
         expect(@form).to be_valid
         end
-       end
 
        it '建物名の記入がなくても登録できること' do
-        @form.build = ''
+        @form.building = ''
         expect(@form).to be_valid
       end
+    end
 
   end
  end

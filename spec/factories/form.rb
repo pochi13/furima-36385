@@ -6,8 +6,8 @@ FactoryBot.define do
     municipality  { "福岡県" }
     address { '2' }
     number { '1234567891' }
-    build {'青山ビル'}
+    building {'青山ビル'}
     token {"tok_abcdefghijk00000000000000000"}
-
+ 
     end
 end

@@ -41,8 +41,5 @@ class PurchasesController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  def set_move
-    if  current_user == @item.user || @item.purchase != nil 
-    redirect_to root_path
-   end
+
 end
