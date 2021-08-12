@@ -4,6 +4,10 @@ class PurchasesController < ApplicationController
   def index
    @form = Form.new
    @form2 = Item.find(params[:item_id])
+   if  current_user.id != @form2 || current_user.id == @form2
+    redirect_to root_path
+    
+   end
   end
 
   def create
@@ -17,10 +21,11 @@ class PurchasesController < ApplicationController
       render :index
     end
    end
+  
    
+
   private
   def form_params
-
     params.require(:form).permit(:code, :delivery_area_id, :municipality, :address, :number, :building).merge(user_id: current_user.id,item_id: params[:item_id],token: params[:token])
   end
 
@@ -32,6 +37,4 @@ class PurchasesController < ApplicationController
         currency: 'jpy'                
       )
   end
-
-
 end
