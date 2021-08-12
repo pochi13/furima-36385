@@ -1,12 +1,11 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :set_purchase, only: [:index, :create]
-
+  before_action :set_move,only: [:index, :create]
   def index
    @form = Form.new
    if  current_user == @item.user || @item.purchase != nil 
     redirect_to root_path
-    
    end
   end
 
@@ -41,4 +40,9 @@ class PurchasesController < ApplicationController
   def set_purchase
     @item = Item.find(params[:item_id])
   end
+
+  def set_move
+    if  current_user == @item.user || @item.purchase != nil 
+    redirect_to root_path
+   end
 end
