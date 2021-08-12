@@ -1,17 +1,16 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :create]
+  before_action :set_purchase, only: [:index, :create]
 
   def index
    @form = Form.new
-   @form2 = Item.find(params[:item_id])
-   if  current_user.id != @form2 || current_user.id == @form2
+   if  current_user == @form2.user
     redirect_to root_path
     
    end
   end
 
   def create
-    @form2 = Item.find(params[:item_id])
     @form = Form.new(form_params)
     if @form.valid?
       item_pay
@@ -30,11 +29,16 @@ class PurchasesController < ApplicationController
   end
 
   def item_pay
-    Payjp.api_key = "sk_test_b3c92ec42fc803da26a24bdb" 
+    Payjp.api_key = "0ad5afe6e0866c86b3c6456cf44b9c11" 
     Payjp::Charge.create(
         amount: @form2.price,
         card: form_params[:token],    
         currency: 'jpy'                
       )
+  end
+
+  private
+  def set_purchase
+    @form2 = Item.find(params[:item_id])
   end
 end

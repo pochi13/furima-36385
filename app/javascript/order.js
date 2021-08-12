@@ -2,7 +2,7 @@
 
 
 window.addEventListener('load', () => {
-    Payjp.setPublicKey("pk_test_c487b0cc8a3ae8b23560ea99");
+    Payjp.setPublicKey("0ad5afe6e0866c86b3c6456cf44b9c11");
   const submit = document.getElementById("button");
   submit.addEventListener('click', (e) => {
     e.preventDefault();
