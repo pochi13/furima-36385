@@ -54,7 +54,6 @@ has_one  :purchase
 
 
 
-
 ## address テーブル
 
 | Column              | Type     | Options     |

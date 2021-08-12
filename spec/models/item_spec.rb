@@ -89,7 +89,7 @@ require 'rails_helper'
       it '発送元の地域の情報が１の時には出品できない' do
         @item.delivery_indication_id = 1
         @item.valid?
-    
+        
         expect(@item.errors.full_messages).to include("Delivery indication must be other than 1")
       end
 
