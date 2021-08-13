@@ -40,7 +40,7 @@ class PurchasesController < ApplicationController
   end
 
   def set_move
-    if @item.user != current_user || @item.purchase != nil 
+    if @item.user == current_user || @item.purchase != nil 
         redirect_to root_path
     end
   end
