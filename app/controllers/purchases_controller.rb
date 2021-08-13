@@ -32,6 +32,7 @@ class PurchasesController < ApplicationController
         currency: 'jpy'                
       )
   end
+  
 
   private
   def set_purchase
