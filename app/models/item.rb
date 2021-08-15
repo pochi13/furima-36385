@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_charge
   belongs_to :delivery_area
   belongs_to :delivery_indication
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :user
   has_one  :purchase
 
@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :explan
-    validates :image
+    validates :images
     with_options  numericality: { other_than: 1 } do 
       validates :detail_category_id
       validates :detail_status_id
