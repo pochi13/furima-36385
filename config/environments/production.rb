@@ -9,6 +9,10 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://35.75.76.175/cable" 
+  config.action_cable.allowed_request_origins = ['https://35.75.76.175']
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

@@ -16,6 +16,7 @@
 ### Association
 has_many :purchases
 has_many :items
+has_many :messages
 
 
 
@@ -49,13 +50,22 @@ has_one :address
 ### Association
 belongs_to :user
 has_one  :purchase
+has_many  :message
+
+## messages テーブル
+| Column              | Type     | Options     |
+| ------------------  | ------   | ----------- |
+| text               | string   | null: false |
+| user              | reference    | foreign_key:true |
+| item              | reference    | foreign_key:true |
+### Association
+belongs_to :user
+belongs_to :item
 
 
 
 
-
-
-## address テーブル
+## addresses テーブル
 
 | Column              | Type     | Options     |
 | ------------------  | ------   | ----------- |

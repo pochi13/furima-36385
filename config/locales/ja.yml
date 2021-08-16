@@ -17,6 +17,14 @@ ja:
         municipality: 市町村
         building: 建物名
         number: 電話番号
+        images: 画像
+        detail_category_id: 配送カテゴリー
+        detail_status_id: 配送状況
+        delivery_charge_id: 配送料込み
+        delivery_area_id: 配送地域
+        delivery_indication_id: 配送目安
+
+
 
 
 
