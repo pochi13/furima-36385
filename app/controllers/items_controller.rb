@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -41,7 +42,8 @@ class ItemsController < ApplicationController
       @item.destroy
       redirect_to root_path
     end
-  
+
+
 
 
 

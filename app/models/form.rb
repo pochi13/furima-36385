@@ -11,7 +11,7 @@ class Form
     validates :number  ,format: { with: /\A\d{10,11}\z/ } 
     validates :user_id
     validates :item_id
-    validates :token
+   
     end
 
 

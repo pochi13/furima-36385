@@ -17,7 +17,7 @@
 has_many :purchases
 has_many :items
 has_many :messages
-
+has_many :card
 
 
 ## purchasesテーブル
@@ -79,6 +79,14 @@ belongs_to :item
 ### Association
 belongs_to :purchase
 
+## cardsテーブル
+
+| Column              | Type     | Options     |
+| ------------------  | ------   | ----------- |
+| customer_token      | string   | null: false |
+| user                 |reference | foreign_key:true |
+### Association
+belongs_to :user
 
 
 
