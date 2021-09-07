@@ -94,10 +94,16 @@
     <% end %>
     <div id='messages'>
   <% @messages.reverse_each do |message| %>
+    
     <p><%= message.text %></p>
+     <%= link_to "削除", item_message_path(@item,message), method: :delete ,class: 'btn btn-default'%>
+   
+   
   <% end %>
+
 </div>
-　　<% end %>
+  
+  <% end %>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">

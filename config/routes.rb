@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'items#index'
    resources :items do
-    resources :messages, only: [:create]
+    resources :messages, only: [:create,:destroy]
     resources :purchases,only:[:create,:index] 
     post 'order', on: :member
    end
