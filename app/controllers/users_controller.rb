@@ -3,8 +3,11 @@ class UsersController < ApplicationController
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     card = Card.find_by(user_id: current_user.id)
     redirect_to new_card_path and return unless card.present?
+                                  # カード情報がなければ
 
-    customer = Payjp::Customer.retrieve(card.customer_token) # 先程のカード情報を元に、顧客情報を取得
+    customer = Payjp::Customer.retrieve(card.customer_token) 
+    # Payjp::Customer.retrieve(card.customer_token)でpayjpの顧客情報を獲得している
+    # 先程のカード情報を元に、顧客情報を取得
     @card = customer.cards.first
   end
   def update

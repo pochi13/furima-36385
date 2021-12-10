@@ -23,6 +23,7 @@
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :images,name: 'item[images][]', id:"items-image" %>
+        <%# # 画像の選択  %>
         <div id="image-list"></div>
         <% @item.images.each do |image| %>
           <%= image_tag image, class: 'images' %>

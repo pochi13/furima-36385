@@ -1,5 +1,6 @@
 class DeliveryArea < ActiveHash::Base
   include ActiveHash::Associations
+  # ActiveHashはテーブルとして保存する必要がないもの。自作でモデルを作ったもので命名規則として大文字から始まるもの
   has_many :items
 
   self.data = [

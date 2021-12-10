@@ -1,6 +1,8 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
+  # ログインしてなければindexとcreateアクションはできません
   before_action :set_purchase, only: [:index, :create]
+  
   before_action :set_move,only: [:index, :create]
 
   def index
